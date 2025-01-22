@@ -1,6 +1,10 @@
-import Heading from './components/Heading'
+import Heading from './components/heading'
 import NavBar from './components/nav_bar'
 import Example from './components/prop_dos'
+import Card from './components/card';
+import ModeToggler from './mode_toggler';
+
+
 
 function App() {
   const bool = false;
@@ -16,6 +20,9 @@ function App() {
                 math={(10 + 20) / 3}
                 str={str1 + ' another ' + 'string'}
             />
+    <Card h2="Card Title" h3="Card Subtitle"></Card>
+    <ModeToggler />
+
     </div>
   )
 }
