@@ -1,22 +1,27 @@
-const ModeToggler = () => {
+const ModeToggler = () => 
+{
 
     const darkModeOn = false;
     const darkMode = <h1> Dark Mode is on </h1>
     const LightMode = <h1> Light Mode is on </h1>
 
-    function hadleClick(){
-        darkModeOn = !darkModeOn;
-        if (darkModeOn === true)
-            {
-            console.log('Dark Mode is on');
-            else{   
+    function hadleClick()
+        {
+            darkModeOn = !darkModeOn;
+            if (darkModeOn === true)
+                {
+                    console.log('Dark Mode is on');
+                }
+            else
+                {    
                 console.log('Light Mode is on');
-            }
+                }
           
         }
-    }
+    
 
-    return ( 
+    return 
+        ( 
 
         <>
 
@@ -26,14 +31,11 @@ const ModeToggler = () => {
             </div>
             
             <div> {darkModeOn ? darkMode: LightMode}
-                <button onClick={handleClick}> Toggle Mode </button>
+                <button onClick={hadleClick}> Toggle Mode </button>
             </div>
-
-
-
         </>
 
-     );
-}
- 
+        );
+
+};
 export default ModeToggler;
