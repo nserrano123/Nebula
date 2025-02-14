@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import App from '../App';
+import App from '../AppList';
 
 const rootElement = document.getElementById('root');
 
