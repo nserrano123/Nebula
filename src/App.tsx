@@ -21,7 +21,6 @@ function App() {
                 str={str1 + ' another ' + 'string'}
             />
     <Card h2="Card Title" h3="Card Subtitle"></Card>
-    <ModeToggler />
 
     </div>
   )
