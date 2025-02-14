@@ -1,24 +1,77 @@
+import React from "react";
 
-import InputComponent from './components/input_component';
-import MyButton from './components/mybutton';
-import RegisterForm from './components/register_form';
+import Fruits from "./components/Fruits";
+import FruitsCounter from "./components/FruitsCounter";
+import DessertsList from "./DessertsList";
+
+const isLowCalorie = true;
+const desserts = [
+  {
+    id: 1,
+    name: "Chocolate Cake",
+    calories: 400,
+    createdAt: "2022-09-01",
+  },
+  {
+    id: 2,
+    name: "Ice Cream",
+    calories: 200,
+    createdAt: "2022-01-02",
+  },
+  {
+    id: 3,
+    name: "Tiramisu",
+    calories: 300,
+    createdAt: "2021-10-03",
+  },
+  {
+    id:4,
+    name: "Cheesecake",
+    calories: 600,
+    createdAt: "2022-01-04",
+  },
+];
 
 
 
 function App() {
+  const [fruits] = React.useState([
+    { fruitName: "apple", id: 1 },
+    { fruitName: "apple", id: 2 },
+    { fruitName: "plum", id: 3 },
+  ]);
 
-
-  return (
-<div>
-  
-    <MyButton></MyButton>
-
-    <InputComponent></InputComponent>
-    <RegisterForm></RegisterForm>
-
-   </div>
-
-  )
+const listItems = topDesserts.map(desserts => {
+  const 
 }
 
-export default App
+  return (
+
+    <div>
+    <div className="App">
+      <h1>Where should the state go?</h1>
+
+      <div>
+        {fruits.map((fruit) => (
+          <div key={fruit.id}>{fruit.fruitName}</div>
+        ))}
+      </div>
+
+      <FruitsCounter fruits={fruits} />
+      <Fruits fruits={fruits} />
+    </div>
+
+
+
+    <div>
+      
+    <h2 style={{ color: isLowCalorie ? "green" : "red" }}> List of low calorie desserts:</h2>
+    
+    <DessertsList data={desserts} />
+    </div>
+
+</div>
+  );
+}
+
+export default App;
