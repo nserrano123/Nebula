@@ -1,29 +1,77 @@
-import Heading from './components/heading'
-import NavBar from './components/nav_bar'
-import Example from './components/prop_dos'
-import Card from './components/card';
-import ModeToggler from './mode_toggler';
+import React from "react";
+
+import Fruits from "./components/Fruits";
+import FruitsCounter from "./components/FruitsCounter";
+import DessertsList from "./DessertsList";
+
+const isLowCalorie = true;
+const desserts = [
+  {
+    id: 1,
+    name: "Chocolate Cake",
+    calories: 400,
+    createdAt: "2022-09-01",
+  },
+  {
+    id: 2,
+    name: "Ice Cream",
+    calories: 200,
+    createdAt: "2022-01-02",
+  },
+  {
+    id: 3,
+    name: "Tiramisu",
+    calories: 300,
+    createdAt: "2021-10-03",
+  },
+  {
+    id:4,
+    name: "Cheesecake",
+    calories: 600,
+    createdAt: "2022-01-04",
+  },
+];
 
 
 
 function App() {
-  const bool = false;
-  const str1 = "just";
-  
-  return (
-    <div className="App">
-    <NavBar  title='Natalia'></NavBar>
-    <Heading firstname = "Bob"></Heading>
-    <Heading firstname = "Natalia"></Heading>
-    <Example
-                toggleBoolean={!bool}
-                math={(10 + 20) / 3}
-                str={str1 + ' another ' + 'string'}
-            />
-    <Card h2="Card Title" h3="Card Subtitle"></Card>
+  const [fruits] = React.useState([
+    { fruitName: "apple", id: 1 },
+    { fruitName: "apple", id: 2 },
+    { fruitName: "plum", id: 3 },
+  ]);
 
-    </div>
-  )
+const listItems = topDesserts.map(desserts => {
+  const 
 }
 
-export default App
+  return (
+
+    <div>
+    <div className="App">
+      <h1>Where should the state go?</h1>
+
+      <div>
+        {fruits.map((fruit) => (
+          <div key={fruit.id}>{fruit.fruitName}</div>
+        ))}
+      </div>
+
+      <FruitsCounter fruits={fruits} />
+      <Fruits fruits={fruits} />
+    </div>
+
+
+
+    <div>
+      
+    <h2 style={{ color: isLowCalorie ? "green" : "red" }}> List of low calorie desserts:</h2>
+    
+    <DessertsList data={desserts} />
+    </div>
+
+</div>
+  );
+}
+
+export default App;
