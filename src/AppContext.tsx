@@ -2,6 +2,8 @@ import { useTheme, ThemeProvider } from "./contexts/theme_context";
 import Switch from "./components/switch";
 import React from "react";
 import "./styles/AppContext.css";
+import DessertsList from "./DessertsList";
+import AppForm from "./AppForm";
 
 const Title: React.FC = ({children}) => {
   const { theme } = useTheme();
@@ -77,9 +79,35 @@ function App() {
 
 function Root() {
   return (
+
+    <div>
+
+    <h2>
+      Ejemplo de uso de Contexto
+
+    </h2>
+
+      
+ 
     <ThemeProvider>
       <App />
+     <div>
+
+      <h2>
+        Ejemplo de Controlled Components
+
+        </h2>
+
+        <div>
+      <AppForm/>
+
+        </div>
+
+     
+     </div>
     </ThemeProvider>
+
+    </div>
   );
 }
 
