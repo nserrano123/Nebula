@@ -4,6 +4,9 @@ import React from "react";
 import "./styles/AppContext.css";
 import DessertsList from "./DessertsList";
 import AppForm from "./AppForm";
+import CustomHook from "./components/custom_hook";
+import FetchExample from "./components/fetch_example";
+import UseStateExample from "./components/useState_example";
 
 const Title: React.FC = ({children}) => {
   const { theme } = useTheme();
@@ -107,6 +110,20 @@ function Root() {
      </div>
     </ThemeProvider>
 
+    <h2>Ejemplo de Custom Hook</h2>
+    <div>
+      <CustomHook />
+    </div>
+
+    <h2>Ejemplo de Fetch</h2>
+    <div>
+      <FetchExample />
+    </div>
+
+    <h2>Ejemplo useState</h2>
+    <div>
+      <UseStateExample />
+    </div>
     </div>
   );
 }
