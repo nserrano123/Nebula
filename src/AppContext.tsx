@@ -6,7 +6,7 @@ import {
   useParams,
 } from "react-router-dom";
 import { ThemeProvider } from "./contexts/theme_context";
-import AppForm from "./AppForm";
+import AppForm from "./form_example";
 import CustomHook from "./components/custom_hook";
 import FetchExample from "./components/fetch_example";
 import UseStateExample from "./components/useState_example";
