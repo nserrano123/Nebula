@@ -1,7 +1,7 @@
 import React from "react";
 // import Fruits from "./components/Fruits";
 // import FruitsCounter from "./components/FruitsCounter";
-import DessertsList from "./desserts_ist";
+import DessertsList from "../desserts_ist";
 
 const isLowCalorie = true;
 const desserts = [
