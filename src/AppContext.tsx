@@ -2,14 +2,14 @@ import { useTheme, ThemeProvider } from "./contexts/theme_context";
 import Switch from "./components/switch";
 import React from "react";
 import "./styles/AppContext.css";
-import DessertsList from "./DessertsList";
-import AppForm from "./AppForm";
+
+import AppForm from "./form_example";
 import CustomHook from "./components/custom_hook";
 import FetchExample from "./components/fetch_example";
 import UseStateExample from "./components/useState_example";
 
-const Title: React.FC = ({children}) => {
-  const { theme } = useTheme();
+const Title: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { theme } = useTheme(); // ✅ Se obtiene el theme desde el contexto
   return (
     <h2
       style={{
@@ -21,7 +21,7 @@ const Title: React.FC = ({children}) => {
   );
 };
 
-const Paragraph : React.FC = ({ children }) => {
+const Paragraph: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { theme } = useTheme();
   return (
     <p
@@ -65,8 +65,8 @@ const Page = () => {
   );
 };
 
-function App() {
-  const { theme } = useTheme();
+const App = () => {
+  const { theme } = useTheme(); // ✅ Se obtiene theme dentro de App
   return (
     <div
       className="App"
@@ -78,53 +78,36 @@ function App() {
       <Page />
     </div>
   );
-}
+};
 
 function Root() {
   return (
-
-    <div>
-
-    <h2>
-      Ejemplo de uso de Contexto
-
-    </h2>
-
-      
- 
     <ThemeProvider>
-      <App />
-     <div>
+      <div>
+        <h2>Ejemplo de uso de Contexto</h2>
+        <App />
 
-      <h2>
-        Ejemplo de Controlled Components
-
-        </h2>
-
+        <h2>Ejemplo de Controlled Components</h2>
         <div>
-      <AppForm/>
-
+          <AppForm />
         </div>
 
-     
-     </div>
+        <h2>Ejemplo de Custom Hook</h2>
+        <div>
+          <CustomHook />
+        </div>
+
+        <h2>Ejemplo de Fetch</h2>
+        <div>
+          <FetchExample />
+        </div>
+
+        <h2>Ejemplo useState</h2>
+        <div>
+          <UseStateExample />
+        </div>
+      </div>
     </ThemeProvider>
-
-    <h2>Ejemplo de Custom Hook</h2>
-    <div>
-      <CustomHook />
-    </div>
-
-    <h2>Ejemplo de Fetch</h2>
-    <div>
-      <FetchExample />
-    </div>
-
-    <h2>Ejemplo useState</h2>
-    <div>
-      <UseStateExample />
-    </div>
-    </div>
   );
 }
 
