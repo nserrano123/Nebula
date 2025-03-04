@@ -11,6 +11,8 @@ import CustomHook from "./components/custom_hook";
 import FetchExample from "./components/fetch_example";
 import UseStateExample from "./components/useState_example";
 import "./styles/AppContext.css";
+import InteractiveRectangle from "./components/useEffect_example";
+import ClickEventButton from "./components/clickEventButton";  // Cambié el nombre aquí
 
 // Home component with a cards menu in two columns
 const Home = () => {
@@ -20,6 +22,8 @@ const Home = () => {
     { id: 2, title: "CustomHook", description: "Example of a Custom Hook" },
     { id: 3, title: "Fetch Example", description: "Using Fetch API for data" },
     { id: 4, title: "UseState Example", description: "Using useState in React" },
+    { id: 5, title: "UseEffect Example", description: "Using useEffect in React" },
+    { id: 6, title: "ClickEventButton", description: "Using clickEvent in React" },  // Cambié el título aquí
   ];
 
   const handleCardClick = (id: number) => {
@@ -66,6 +70,12 @@ const ExamplePage = () => {
       break;
     case "4":
       content = <UseStateExample />;
+      break;
+    case "5":
+      content = <InteractiveRectangle />;
+      break;
+    case "6":
+      content = <ClickEventButton />;  // Cambié el nombre aquí
       break;
     default:
       content = <div>Example not found</div>;

@@ -1,5 +1,6 @@
 import React from "react";
-import AppForm from "../AppForm";
+import AppForm from "../components/form_example";
+
 
 const AppFormPage: React.FC = () => {
   return (
