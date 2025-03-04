@@ -24,7 +24,7 @@ function FetchExample() {
 
     </div>
   ) : (
-    <h1>Data pending...</h1>
+    <h1>Por favor espera mientras busco una inforacion del registro...</h1>
   );
 }
 
